@@ -90,3 +90,22 @@ Gemini API + Vapi (AI Services)
 ---
 
 **LadVoice (Full Spring Boot)** không chỉ là dự án học tập, mà còn là bước đệm giúp sinh viên AI hiểu toàn cảnh vòng đời phát triển ứng dụng hiện đại — từ frontend UI đến backend API và tích hợp trí tuệ nhân tạo thực tiễn.
+
+### Với ban đầu dùng Firebase
+
+* **Firebase Auth →** Spring Security (JWT)
+* **Firestore →** PostgreSQL + Spring Data JPA (Flyway migration)
+* **Firebase Admin / Server Actions / API routes (Next.js) →** REST API Spring Boot
+* **Realtime nhỏ (nếu có) →** SSE/WebSocket Spring
+* **Vercel deploy API →** Docker + Render/Fly.io/Cloud Run (hoặc server riêng)
+
+### Với sử dụng SpringBoot
+
+* **tRPC router →** REST API Spring
+* **Drizzle ORM →** Spring Data JPA/QueryDSL
+* **Better Auth →** Spring Security (JWT/OAuth2 login Google/GitHub)
+* **Neon PostgreSQL (DB) →** vẫn dùng Postgres, chỉ đổi ORM/driver
+* **Background jobs (Ingest) →** Spring Scheduling/Quartz/Celery-equivalent (Spring)
+* **Webhooks (Stream/OpenAI) →** Controller Spring
+
+👉 Nói cách khác, Spring Boot thay phần **API, auth, data access, background jobs, realtime**, còn **frontend (Next.js), Vapi, Gemini, Stream** và **PostgreSQL** vẫn giữ, chỉ đổi cách tích hợp.
